@@ -110,6 +110,10 @@ python -m pytest -q
 
 ## 🎬 效果展示
 
+**实时 Dashboard 最终效果**（浏览器打开 `http://127.0.0.1:8000`，AI 依据现场事件自动切镜）：
+
+![AI Live Director 实时 Dashboard 演示](docs/images/demo.gif)
+
 AI 导播依据现场事件自动切镜（合成两人访谈场景）：
 
 | A 讲话 → CAM2 中近景 | B 讲话 → CAM3 中近景 | 双方互动 → CAM1 双人 | 产品展示 → CAM4 特写 |
