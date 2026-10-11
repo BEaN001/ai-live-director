@@ -1,0 +1,7 @@
+# AI Live Director v0.1 —— 运行依赖（Phase 0：零模型依赖）
+# 不包含任何 ML 模型（无 torch / yolo / vlm），仅用于合成画面 + 规则导播 + 展示
+numpy>=1.23,<2
+opencv-python-headless>=4.8
+PyYAML>=6.0
+fastapi>=0.110
+uvicorn[standard]>=0.29

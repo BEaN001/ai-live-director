@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 运行产物（视频、日志、截图）
+outputs/
+*.mp4
+*.avi
+*.jsonl
+
+# 数据（真实视频/标注不入库）
+datasets/*
+!datasets/.gitkeep
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+
+# 测试缓存
+.pytest_cache/
+.coverage
+htmlcov/

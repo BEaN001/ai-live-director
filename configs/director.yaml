@@ -1,0 +1,38 @@
+# AI 导演策略参数（Phase 0：规则导演）
+# 导演状态机把「现场事件」映射到「机位 + 景别」，并受最小镜头时长约束，
+# 避免频繁切镜导致画面「抽风」。
+
+min_shot_duration: 3.0     # 单个镜头最短保持时间（秒）
+default_shot_duration: 4.0 # 切换后的默认镜头时长（秒）
+
+# 导演状态 → 目标机位 + 景别
+states:
+  FOCUS_A:
+    camera: CAM2
+    shot: MEDIUM_CLOSE_UP
+    reason: "A 是当前发言人"
+    confidence: 0.95
+
+  FOCUS_B:
+    camera: CAM3
+    shot: MEDIUM_CLOSE_UP
+    reason: "B 是当前发言人"
+    confidence: 0.95
+
+  TWO_SHOT:
+    camera: CAM1
+    shot: TWO_SHOT
+    reason: "双方正在互动"
+    confidence: 0.90
+
+  PRODUCT:
+    camera: CAM4
+    shot: PRODUCT_CU
+    reason: "检测到产品展示事件"
+    confidence: 0.92
+
+  IDLE:
+    camera: CAM1
+    shot: WIDE
+    reason: "无发言人，切全景"
+    confidence: 0.85

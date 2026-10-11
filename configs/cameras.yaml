@@ -1,0 +1,39 @@
+# 多机位定义（Phase 0：虚拟多机位）
+# 每个机位对合成场景帧做一次 crop，模拟「全景 / 单人特写 / 产品特写」。
+# crop 格式：[x, y, w, h]，坐标基于合成场景（scene.width × scene.height）。
+
+fps: 10            # 合成视频帧率
+duration: 25.0     # 单个演示周期时长（秒）
+
+scene:
+  width: 1280
+  height: 720
+
+output:
+  program: [1280, 720]   # 节目输出（PGM）分辨率
+  preview: [320, 180]    # Dashboard 机位预览分辨率
+
+cameras:
+  - id: CAM1
+    position_label: front      # 正面机位
+    shot: TWO_SHOT             # 双人全景
+    target: both
+    crop: [0, 0, 1280, 720]
+
+  - id: CAM2
+    position_label: left       # 左侧机位
+    shot: MEDIUM_CLOSE_UP      # 人物 A 中近景
+    target: person_A
+    crop: [30, 40, 620, 640]
+
+  - id: CAM3
+    position_label: right      # 右侧机位
+    shot: MEDIUM_CLOSE_UP      # 人物 B 中近景
+    target: person_B
+    crop: [630, 40, 620, 640]
+
+  - id: CAM4
+    position_label: product    # 产品机位
+    shot: PRODUCT_CU           # 产品特写
+    target: product
+    crop: [440, 360, 400, 340]

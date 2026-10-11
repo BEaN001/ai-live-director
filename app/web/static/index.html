@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Live Director v0.1</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>AI LIVE DIRECTOR <span class="ver">v0.1</span></h1>
+    <p class="subtitle">智能拍摄 · AI 导播 Demo —— 虚拟多机位自动切镜（Phase 0 · 规则导演）</p>
+  </header>
+
+  <main>
+    <section class="program-panel">
+      <h2>节目输出 <span class="tag">PROGRAM</span></h2>
+      <div class="program-frame">
+        <img id="program" alt="节目输出">
+      </div>
+      <div class="status" id="status">连接中…</div>
+    </section>
+
+    <section class="preview-panel">
+      <h2>多机位预览</h2>
+      <div class="previews" id="previews"></div>
+    </section>
+
+    <aside class="director-panel">
+      <h2>AI 导演决策</h2>
+      <dl class="decision">
+        <dt>场景</dt><dd id="scene">—</dd>
+        <dt>当前发言人</dt><dd id="speaker">—</dd>
+        <dt>双方互动</dt><dd id="interaction">—</dd>
+        <dt>产品展示</dt><dd id="product">—</dd>
+        <dt>动作</dt><dd id="action">—</dd>
+        <dt>目标机位</dt><dd id="camera">—</dd>
+        <dt>景别</dt><dd id="shot">—</dd>
+        <dt>理由</dt><dd id="reason">—</dd>
+        <dt>置信度</dt><dd id="confidence">—</dd>
+      </dl>
+      <h2>切镜日志</h2>
+      <ul class="log" id="log"></ul>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
